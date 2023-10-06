@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		B81988582ACFB61700BF6D6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81988572ACFB61700BF6D6A /* AppDelegate.swift */; };
-		B819885A2ACFB61700BF6D6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81988592ACFB61700BF6D6A /* SceneDelegate.swift */; };
 		B819885C2ACFB61700BF6D6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B819885B2ACFB61700BF6D6A /* ViewController.swift */; };
 		B819885F2ACFB61700BF6D6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B819885D2ACFB61700BF6D6A /* Main.storyboard */; };
 		B81988622ACFB61700BF6D6A /* clockify_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B81988602ACFB61700BF6D6A /* clockify_ios.xcdatamodeld */; };
 		B81988642ACFB61A00BF6D6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B81988632ACFB61A00BF6D6A /* Assets.xcassets */; };
 		B81988672ACFB61A00BF6D6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B81988652ACFB61A00BF6D6A /* LaunchScreen.storyboard */; };
+		B819886F2ACFC99B00BF6D6A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = B819886E2ACFC99B00BF6D6A /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B81988542ACFB61700BF6D6A /* clockify-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "clockify-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B81988572ACFB61700BF6D6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B81988592ACFB61700BF6D6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B819885B2ACFB61700BF6D6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B819885E2ACFB61700BF6D6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B81988612ACFB61700BF6D6A /* clockify_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = clockify_ios.xcdatamodel; sourceTree = "<group>"; };
 		B81988632ACFB61A00BF6D6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B81988662ACFB61A00BF6D6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B81988682ACFB61A00BF6D6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B819886E2ACFC99B00BF6D6A /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +59,12 @@
 			isa = PBXGroup;
 			children = (
 				B81988572ACFB61700BF6D6A /* AppDelegate.swift */,
-				B81988592ACFB61700BF6D6A /* SceneDelegate.swift */,
 				B819885B2ACFB61700BF6D6A /* ViewController.swift */,
 				B819885D2ACFB61700BF6D6A /* Main.storyboard */,
 				B81988632ACFB61A00BF6D6A /* Assets.xcassets */,
 				B81988652ACFB61A00BF6D6A /* LaunchScreen.storyboard */,
 				B81988682ACFB61A00BF6D6A /* Info.plist */,
+				B819886E2ACFC99B00BF6D6A /* Fonts */,
 				B81988602ACFB61700BF6D6A /* clockify_ios.xcdatamodeld */,
 			);
 			path = "clockify-ios";
@@ -131,6 +131,7 @@
 				B81988672ACFB61A00BF6D6A /* LaunchScreen.storyboard in Resources */,
 				B81988642ACFB61A00BF6D6A /* Assets.xcassets in Resources */,
 				B819885F2ACFB61700BF6D6A /* Main.storyboard in Resources */,
+				B819886F2ACFC99B00BF6D6A /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +144,6 @@
 			files = (
 				B819885C2ACFB61700BF6D6A /* ViewController.swift in Sources */,
 				B81988582ACFB61700BF6D6A /* AppDelegate.swift in Sources */,
-				B819885A2ACFB61700BF6D6A /* SceneDelegate.swift in Sources */,
 				B81988622ACFB61700BF6D6A /* clockify_ios.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

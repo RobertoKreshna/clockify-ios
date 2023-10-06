@@ -2,6 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NunitoSans_Black.ttf</string>
+		<string>NunitoSans_BlackItalic.ttf</string>
+		<string>NunitoSans_Bold.ttf</string>
+		<string>NunitoSans_BoldItalic.ttf</string>
+		<string>NunitoSans_ExtraBold.ttf</string>
+		<string>NunitoSans_ExtraBoldItalic.ttf</string>
+		<string>NunitoSans_ExtraLight.ttf</string>
+		<string>NunitoSans_ExtraLightItalic.ttf</string>
+		<string>NunitoSans_Regular.ttf</string>
+		<string>NunitoSans_Italic.ttf</string>
+		<string>NunitoSans_Light.ttf</string>
+		<string>NunitoSans_LightItalic.ttf</string>
+		<string>NunitoSans_Medium.ttf</string>
+		<string>NunitoSans_MediumItalic.ttf</string>
+		<string>NunitoSans_SemiBold.ttf</string>
+		<string>NunitoSans_SemiBoldItalic.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
