@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h2A-KA-5fF">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoSans_Bold.ttf">
+            <string>NunitoSans7pt-Bold</string>
+        </array>
+        <array key="NunitoSans_Regular.ttf">
+            <string>NunitoSans7pt-Regular</string>
+        </array>
+        <array key="NunitoSans_SemiBold.ttf">
+            <string>NunitoSans7pt-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="PaQ-CR-WSi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h2A-KA-5fF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v0X-ok-ng1">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XAu-w1-hLU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhr-rC-ZOy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.1679389312977" y="-2.1126760563380285"/>
+        </scene>
+        <!--Email InputVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="EmailInputVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="jNt-C0-RTC">
+                                <rect key="frame" x="50" y="239" width="293" height="40"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMW-by-6id">
+                                <rect key="frame" x="100.33333333333333" y="766" width="192.33333333333337" height="36"/>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Create new account?"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Create new account?">
+                                    <fontDescription key="titleFontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="16"/>
+                                    <color key="baseForegroundColor" name="brandAccent"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="createNewAccountPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ey3-hH-Iyg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrJ-z1-xqi">
+                                <rect key="frame" x="16" y="702" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="cvo-RI-Xqc"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vo8-JE-P4A"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kzz-YT-bEx">
+                                <rect key="frame" x="16" y="638" width="361" height="32"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e-mail" translatesAutoresizingMaskIntoConstraints="NO" id="Ush-lv-MpF">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nKc-ep-BEr">
+                                        <rect key="frame" x="40" y="0.0" width="321" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="tqk-hQ-i8D"/>
+                                        </constraints>
+                                        <color key="textColor" name="brandAccent"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gT1-Fb-V4y">
+                                <rect key="frame" x="56" y="610.66666666666663" width="336" height="19.333333333333371"/>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="14"/>
+                                <color key="textColor" name="brandAccent"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="brandBlue"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KrJ-z1-xqi" secondAttribute="trailing" constant="16" id="0sA-G0-k2M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jNt-C0-RTC" secondAttribute="trailing" constant="50" id="3Y6-da-VSC"/>
+                            <constraint firstItem="KrJ-z1-xqi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5jQ-b0-1j9"/>
+                            <constraint firstItem="jNt-C0-RTC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="136" id="5oZ-Bb-gvo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gT1-Fb-V4y" secondAttribute="trailing" constant="1" id="6Ka-Wn-ij9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KrJ-z1-xqi" secondAttribute="trailing" constant="16" id="J5Q-Bv-mS7"/>
+                            <constraint firstItem="gT1-Fb-V4y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="Oyc-V9-Out"/>
+                            <constraint firstItem="aMW-by-6id" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QTZ-X2-a4e"/>
+                            <constraint firstItem="jNt-C0-RTC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="X4y-xL-6ss"/>
+                            <constraint firstItem="KrJ-z1-xqi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Z8t-IS-N7W"/>
+                            <constraint firstItem="gT1-Fb-V4y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="56" id="ZKe-Kk-LrI"/>
+                            <constraint firstItem="aMW-by-6id" firstAttribute="top" secondItem="KrJ-z1-xqi" secondAttribute="bottom" constant="16" id="c9E-2c-T82"/>
+                            <constraint firstItem="Kzz-YT-bEx" firstAttribute="top" secondItem="gT1-Fb-V4y" secondAttribute="bottom" constant="8" id="gju-bs-Efc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kzz-YT-bEx" secondAttribute="trailing" constant="16" id="hDt-Pp-BCs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aMW-by-6id" secondAttribute="bottom" constant="16" id="hzf-lr-VWN"/>
+                            <constraint firstItem="KrJ-z1-xqi" firstAttribute="top" secondItem="Kzz-YT-bEx" secondAttribute="bottom" constant="32" id="jja-dI-hyf"/>
+                            <constraint firstItem="Kzz-YT-bEx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zXc-Ix-SjS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="k7j-Nu-58D"/>
+                    <connections>
+                        <outlet property="createAccountButton" destination="aMW-by-6id" id="Okf-VA-asq"/>
+                        <outlet property="emailTextField" destination="nKc-ep-BEr" id="bj3-SN-E6B"/>
+                        <outlet property="signinButton" destination="KrJ-z1-xqi" id="r1Q-1b-KLx"/>
+                        <segue destination="hPK-F1-d6R" kind="show" identifier="goToRegister" id="sCj-Kq-r0I"/>
+                        <segue destination="ejN-1y-8YC" kind="show" identifier="goToLogin" id="bKs-Xb-MPr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1064.885496183206" y="-2.1126760563380285"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="3Yu-oU-xqh">
+            <objects>
+                <viewController id="ejN-1y-8YC" customClass="LoginVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hki-Pn-HYg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTf-ps-Q6V">
+                                <rect key="frame" x="15.999999999999993" y="133" width="121.33333333333331" height="33"/>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="24"/>
+                                <color key="textColor" name="brandBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input your password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQF-X8-Byd">
+                                <rect key="frame" x="16" y="196" width="155" height="19.333333333333343"/>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-SemiBold" family="Nunito Sans 7pt" pointSize="14"/>
+                                <color key="textColor" name="brandBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtO-eX-gl2">
+                                <rect key="frame" x="16" y="227.33333333333334" width="361" height="32.000000000000028"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sOO-VH-vi2">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="48q-aq-1b2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGC-AL-1Li">
+                                        <rect key="frame" x="305" y="0.0" width="56" height="32"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="eye-off"/>
+                                        <connections>
+                                            <action selector="pwIconPressed:" destination="ejN-1y-8YC" eventType="touchUpInside" id="MXG-Em-tFB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gG-G0-JGS">
+                                <rect key="frame" x="16" y="291.33333333333331" width="361" height="48"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ELW-4x-YNp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="OK">
+                                    <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="16"/>
+                                    <color key="baseForegroundColor" name="brandAccent"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQk-xY-pum">
+                                <rect key="frame" x="124" y="355.33333333333331" width="145" height="22"/>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="16"/>
+                                <color key="textColor" name="brandAccentDisbaled"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QYc-KH-5hO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QYc-KH-5hO" firstAttribute="trailing" secondItem="cQF-X8-Byd" secondAttribute="trailing" constant="222" id="5JH-yE-Zg5"/>
+                            <constraint firstItem="cQF-X8-Byd" firstAttribute="leading" secondItem="QYc-KH-5hO" secondAttribute="leading" constant="16" id="FNj-pV-wlp"/>
+                            <constraint firstItem="LTf-ps-Q6V" firstAttribute="top" secondItem="QYc-KH-5hO" secondAttribute="top" constant="30" id="N5e-I9-eeP"/>
+                            <constraint firstItem="0gG-G0-JGS" firstAttribute="top" secondItem="NtO-eX-gl2" secondAttribute="bottom" constant="32" id="Se7-Q7-Xps"/>
+                            <constraint firstItem="cQF-X8-Byd" firstAttribute="top" secondItem="LTf-ps-Q6V" secondAttribute="bottom" constant="30" id="VPr-Nf-jyi"/>
+                            <constraint firstItem="NtO-eX-gl2" firstAttribute="top" secondItem="cQF-X8-Byd" secondAttribute="bottom" constant="12" id="W2Z-U4-tXU"/>
+                            <constraint firstItem="NtO-eX-gl2" firstAttribute="leading" secondItem="QYc-KH-5hO" secondAttribute="leading" constant="16" id="XQP-v8-msO"/>
+                            <constraint firstItem="0gG-G0-JGS" firstAttribute="leading" secondItem="QYc-KH-5hO" secondAttribute="leading" constant="16" id="Zas-h9-d6b"/>
+                            <constraint firstItem="QYc-KH-5hO" firstAttribute="trailing" secondItem="NtO-eX-gl2" secondAttribute="trailing" constant="16" id="fLi-sT-wfg"/>
+                            <constraint firstItem="SQk-xY-pum" firstAttribute="top" secondItem="0gG-G0-JGS" secondAttribute="bottom" constant="16" id="ihZ-Jm-1lu"/>
+                            <constraint firstItem="LTf-ps-Q6V" firstAttribute="leading" secondItem="QYc-KH-5hO" secondAttribute="leading" constant="16" id="jjn-nR-5BS"/>
+                            <constraint firstItem="QYc-KH-5hO" firstAttribute="trailing" secondItem="LTf-ps-Q6V" secondAttribute="trailing" constant="255.66999999999999" id="paI-PP-EnE"/>
+                            <constraint firstItem="QYc-KH-5hO" firstAttribute="trailing" secondItem="0gG-G0-JGS" secondAttribute="trailing" constant="16" id="qPj-xw-PBz"/>
+                            <constraint firstItem="SQk-xY-pum" firstAttribute="centerX" secondItem="Hki-Pn-HYg" secondAttribute="centerX" id="viT-5j-chI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GvE-Yy-z26"/>
+                    <connections>
+                        <outlet property="okButton" destination="0gG-G0-JGS" id="F1a-xV-Pbo"/>
+                        <outlet property="passwordTextfield" destination="sOO-VH-vi2" id="A6a-LG-6Ah"/>
+                        <outlet property="pwTextfieldIcon" destination="uGC-AL-1Li" id="zjq-5L-wTq"/>
+                        <segue destination="hZJ-dc-sSd" kind="showDetail" identifier="loginToMain" id="0uA-fG-d7J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgr-dD-GU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2113.740458015267" y="372.53521126760563"/>
+        </scene>
+        <!--RegisterVC-->
+        <scene sceneID="NOQ-mT-j0q">
+            <objects>
+                <viewController id="hPK-F1-d6R" customClass="RegisterVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kHK-Yz-l9L">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcu-Lk-cPw">
+                                <rect key="frame" x="16" y="135" width="193" height="33"/>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="24"/>
+                                <color key="textColor" name="brandBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input Your E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-O2-NPj">
+                                <rect key="frame" x="16" y="228" width="361" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="IQM-6n-gQG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tQ-8X-OY5">
+                                <rect key="frame" x="16" y="294" width="361" height="32"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Create Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yuc-aV-j1M">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="uGi-eu-u6P"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8At-aq-do8">
+                                        <rect key="frame" x="305" y="0.0" width="56" height="32"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="eye-off"/>
+                                        <connections>
+                                            <action selector="pwIconPressed:" destination="hPK-F1-d6R" eventType="touchUpInside" id="mvQ-MV-l0e"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cf9-pa-FG0">
+                                <rect key="frame" x="16" y="360" width="361" height="32"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sc3-HU-nf2">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="8aw-4f-BLw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xss-vZ-vn6">
+                                        <rect key="frame" x="305" y="0.0" width="56" height="32"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="eye-off"/>
+                                        <connections>
+                                            <action selector="confirmPwIconPressed:" destination="hPK-F1-d6R" eventType="touchUpInside" id="T51-vP-kvt"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y7-7Y-39f">
+                                <rect key="frame" x="16" y="738" width="361" height="48"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="6On-fh-O2V"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="CREATE">
+                                    <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="16"/>
+                                    <color key="baseForegroundColor" name="brandAccent"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MLs-cs-KN6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MLs-cs-KN6" firstAttribute="trailing" secondItem="cf9-pa-FG0" secondAttribute="trailing" constant="16" id="2xE-kO-SCT"/>
+                            <constraint firstItem="MLs-cs-KN6" firstAttribute="trailing" secondItem="rcu-Lk-cPw" secondAttribute="trailing" constant="184" id="Ew2-Lu-4bi"/>
+                            <constraint firstItem="MLs-cs-KN6" firstAttribute="trailing" secondItem="1y7-7Y-39f" secondAttribute="trailing" constant="16" id="JJZ-VT-kqR"/>
+                            <constraint firstItem="MLs-cs-KN6" firstAttribute="bottom" secondItem="1y7-7Y-39f" secondAttribute="bottom" constant="32" id="MNp-qN-gXL"/>
+                            <constraint firstItem="1y7-7Y-39f" firstAttribute="leading" secondItem="MLs-cs-KN6" secondAttribute="leading" constant="16" id="UtQ-dr-pGU"/>
+                            <constraint firstItem="MLs-cs-KN6" firstAttribute="trailing" secondItem="3tQ-8X-OY5" secondAttribute="trailing" constant="16" id="YUD-Y3-RCh"/>
+                            <constraint firstItem="lXj-O2-NPj" firstAttribute="leading" secondItem="MLs-cs-KN6" secondAttribute="leading" constant="16" id="dSX-xn-yMu"/>
+                            <constraint firstItem="rcu-Lk-cPw" firstAttribute="top" secondItem="MLs-cs-KN6" secondAttribute="top" constant="32" id="dd9-8v-UFE"/>
+                            <constraint firstItem="rcu-Lk-cPw" firstAttribute="leading" secondItem="MLs-cs-KN6" secondAttribute="leading" constant="16" id="gIJ-8s-yaY"/>
+                            <constraint firstItem="3tQ-8X-OY5" firstAttribute="leading" secondItem="MLs-cs-KN6" secondAttribute="leading" constant="16" id="hzq-aF-9Qh"/>
+                            <constraint firstItem="cf9-pa-FG0" firstAttribute="leading" secondItem="MLs-cs-KN6" secondAttribute="leading" constant="16" id="nk2-UT-ONr"/>
+                            <constraint firstItem="MLs-cs-KN6" firstAttribute="trailing" secondItem="lXj-O2-NPj" secondAttribute="trailing" constant="16" id="p3x-kQ-aF2"/>
+                            <constraint firstItem="3tQ-8X-OY5" firstAttribute="top" secondItem="lXj-O2-NPj" secondAttribute="bottom" constant="34" id="pKI-BW-rgk"/>
+                            <constraint firstItem="cf9-pa-FG0" firstAttribute="top" secondItem="3tQ-8X-OY5" secondAttribute="bottom" constant="34" id="uTF-OZ-xKJ"/>
+                            <constraint firstItem="lXj-O2-NPj" firstAttribute="top" secondItem="rcu-Lk-cPw" secondAttribute="bottom" constant="60" id="y52-GS-Ugv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kJL-jL-p18"/>
+                    <connections>
+                        <outlet property="confirmPwIcon" destination="Xss-vZ-vn6" id="cGY-tj-Dip"/>
+                        <outlet property="confirmPwTextfield" destination="Sc3-HU-nf2" id="h4n-6Q-YWv"/>
+                        <outlet property="createButton" destination="1y7-7Y-39f" id="5JN-jK-wqN"/>
+                        <outlet property="emailTextField" destination="lXj-O2-NPj" id="3Q1-KR-hnc"/>
+                        <outlet property="pwIcon" destination="8At-aq-do8" id="Mzb-8V-yC2"/>
+                        <outlet property="pwTextfield" destination="Yuc-aV-j1M" id="506-aE-fK9"/>
+                        <segue destination="hZJ-dc-sSd" kind="showDetail" identifier="registerToMain" id="aRw-11-b94"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUT-Yh-7SG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2114" y="-367"/>
+        </scene>
+        <!--MainVC-->
+        <scene sceneID="F5e-fC-Nxl">
+            <objects>
+                <viewController id="hZJ-dc-sSd" customClass="MainVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m29-gb-ioo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="avQ-ef-G2B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LYr-Tg-Yn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3222" y="29"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aRw-11-b94"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="e-mail" width="32" height="32"/>
+        <image name="eye-off" width="32" height="32"/>
+        <image name="logo" width="260" height="40"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="brandAccent">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="brandAccentDisbaled">
+            <color red="0.65490196078431373" green="0.65098039215686276" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="brandBlue">
+            <color red="0.14499999582767487" green="0.21199999749660492" blue="0.48199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
