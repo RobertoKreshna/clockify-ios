@@ -9,7 +9,18 @@ import UIKit
 
 class MainVC : UIViewController {
     
+    var currentUser: User? {
+        didSet{
+            print(currentUser?.email ?? "Email")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        customizeBackButton()
+    }
+    
+    func customizeBackButton(){
+        self.navigationItem.setHidesBackButton(true, animated:true);
     }
 }

@@ -184,6 +184,9 @@
                                     <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="16"/>
                                     <color key="baseForegroundColor" name="brandAccent"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="okPressed:" destination="ejN-1y-8YC" eventType="touchUpInside" id="ZGQ-sa-niL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQk-xY-pum">
                                 <rect key="frame" x="124" y="355.33333333333331" width="145" height="22"/>
@@ -216,7 +219,7 @@
                         <outlet property="okButton" destination="0gG-G0-JGS" id="F1a-xV-Pbo"/>
                         <outlet property="passwordTextfield" destination="sOO-VH-vi2" id="A6a-LG-6Ah"/>
                         <outlet property="pwTextfieldIcon" destination="uGC-AL-1Li" id="zjq-5L-wTq"/>
-                        <segue destination="hZJ-dc-sSd" kind="showDetail" identifier="loginToMain" id="0uA-fG-d7J"/>
+                        <segue destination="hZJ-dc-sSd" kind="show" identifier="loginToMain" id="0uA-fG-d7J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgr-dD-GU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -298,6 +301,9 @@
                                     <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="16"/>
                                     <color key="baseForegroundColor" name="brandAccent"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="createPressed:" destination="hPK-F1-d6R" eventType="touchUpInside" id="ari-pu-8kR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MLs-cs-KN6"/>
@@ -328,7 +334,7 @@
                         <outlet property="emailTextField" destination="lXj-O2-NPj" id="3Q1-KR-hnc"/>
                         <outlet property="pwIcon" destination="8At-aq-do8" id="Mzb-8V-yC2"/>
                         <outlet property="pwTextfield" destination="Yuc-aV-j1M" id="506-aE-fK9"/>
-                        <segue destination="hZJ-dc-sSd" kind="showDetail" identifier="registerToMain" id="aRw-11-b94"/>
+                        <segue destination="hZJ-dc-sSd" kind="show" identifier="registerToMain" id="aRw-11-b94"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUT-Yh-7SG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -340,11 +346,12 @@
             <objects>
                 <viewController id="hZJ-dc-sSd" customClass="MainVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m29-gb-ioo">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="avQ-ef-G2B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="60M-eB-5e8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYr-Tg-Yn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

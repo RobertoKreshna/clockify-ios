@@ -8,6 +8,12 @@
 import UIKit
 
 class RegisterVC: UIViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let authController = AuthController()
+    
+    var currentUser: User?
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     var pwVisible = false
@@ -70,6 +76,27 @@ class RegisterVC: UIViewController {
                     sender.setImage(image, for: .normal)
                 }
             }
+    }
+    
+    @IBAction func createPressed(_ sender: UIButton) {
+        if let email = emailTextField.text, let pw = pwTextfield.text, let confirmPw = confirmPwTextfield.text{
+             currentUser = authController.signUp(
+                context,
+                email:email,
+                password: pw,
+                confirmPassword: confirmPw
+            )
+            if(currentUser != nil){
+                self.performSegue(withIdentifier: "registerToMain", sender: self)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "registerToMain"){
+            let destinationVC = segue.destination as! MainVC
+            destinationVC.currentUser = currentUser
+        }
     }
     
 }

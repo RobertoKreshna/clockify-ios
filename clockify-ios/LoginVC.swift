@@ -8,6 +8,12 @@
 import UIKit
 
 class LoginVC: UIViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let authController = AuthController()
+    
+    var currentUser: User?
+    
     var email: String?
     @IBOutlet var passwordTextfield: UITextField!
     
@@ -53,4 +59,16 @@ class LoginVC: UIViewController {
         
     }
     
+    @IBAction func okPressed(_ sender: UIButton) {
+        if let email = email, let pw = passwordTextfield.text{
+             currentUser = authController.logIn(
+                context,
+                email:email,
+                pw: pw
+            )
+            if(currentUser != nil){
+                self.performSegue(withIdentifier: "loginToMain", sender: self)
+            }
+        }
+    }
 }
