@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import CoreLocation
 
 class TimerVC: UIViewController {
     
     var timer = Timer()
     var counterInSeconds = 0
+    
+    var locManager = CLLocationManager()
+    var currentLocation: CLLocation!
     
     @IBOutlet weak var startStack: UIStackView!
     @IBOutlet weak var stopResetStack: UIStackView!
@@ -23,7 +27,8 @@ class TimerVC: UIViewController {
     @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var locationButton: UIButton!
+    @IBOutlet weak var locationStack: UIStackView!
+    @IBOutlet weak var locationLabel: UILabel!
     
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var startDateLabel: UILabel!
@@ -39,7 +44,15 @@ class TimerVC: UIViewController {
         customizeButton()
         customizeTextView()
         initialhideStacks()
+        customizeLocationStack()
         textView.delegate = self
+        getCurrentLocation()
+    }
+    
+    func getCurrentLocation(){
+        locManager.requestAlwaysAuthorization()
+        locManager.startUpdatingLocation()
+        locManager.delegate = self
     }
     
     func customizeButton(){
@@ -68,11 +81,14 @@ class TimerVC: UIViewController {
             colours: [.white, .white],
             cornerRadius: 16
         )
-        locationButton.layer.cornerRadius = 16
     }
     
     func customizeTextView(){
         textView.layer.cornerRadius = 8
+    }
+    
+    func customizeLocationStack(){
+        locationStack.layer.cornerRadius = 16
     }
     
     func initialhideStacks(){
@@ -179,6 +195,16 @@ extension TimerVC : UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = "Write your activity here ..."
             textView.textColor = UIColor.brandAccentDisbaled
+        }
+    }
+}
+
+extension TimerVC : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let lat = location.coordinate.latitude
+            let long = location.coordinate.longitude
+            locationLabel.text = "\(lat), \(long)"
         }
     }
 }
