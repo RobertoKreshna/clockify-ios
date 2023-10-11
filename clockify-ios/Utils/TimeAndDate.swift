@@ -23,4 +23,12 @@ class TimeAndDate {
         let result = formatter.string(from: date)
         return result
     }
+    
+    static func getDateFromString(date: String, time: String) -> Date?{
+        let datetime = "\(date)-\(time)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yy-hh:mm:ss"
+        let date = dateFormatter.date(from: datetime)
+        return date
+    }
 }

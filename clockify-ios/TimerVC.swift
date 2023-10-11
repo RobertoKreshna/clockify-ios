@@ -9,6 +9,7 @@ import UIKit
 import CoreLocation
 
 class TimerVC: UIViewController {
+    var currentUser: User?
     
     var timer = Timer()
     var counterInSeconds = 0
@@ -120,6 +121,34 @@ class TimerVC: UIViewController {
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
+        let locationArray = locationLabel.text?.components(separatedBy: ",")
+        
+        let latitude = locationArray?.first
+        let longitude = locationArray?.last
+        let start = TimeAndDate.getDateFromString(date: startDateLabel.text!, time: startTimeLabel.text!)
+        let end = TimeAndDate.getDateFromString(date: endDateLabel.text!, time: endTimeLabel.text!)
+        let title = textView.textColor == UIColor.brandAccentDisbaled ? "" : textView.text
+        let duration = "\(hoursLabel.text!) : \(minutesLabel.text!) : \(secondsLabel.text!)"
+        
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let newActivity = Activity(context: context)
+        newActivity.latitude = latitude
+        newActivity.longitude = longitude
+        newActivity.start = start
+        newActivity.end = end
+        newActivity.duration = duration
+        newActivity.title = title
+        
+        
+        currentUser?.addToActivities(newActivity)
+        
+        do {
+            try context.save()
+        } catch {
+            print("Could not save. \(error)")
+        }
+        
         resetAllLabel()
         resetTextView()
         resetCounter()
@@ -204,7 +233,7 @@ extension TimerVC : CLLocationManagerDelegate {
         if let location = locations.last {
             let lat = location.coordinate.latitude
             let long = location.coordinate.longitude
-            locationLabel.text = "\(lat), \(long)"
+            locationLabel.text = "\(lat),\(long)"
         }
     }
 }

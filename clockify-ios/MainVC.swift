@@ -13,6 +13,7 @@ class MainVC: UIViewController {
     private lazy var TimerVC: TimerVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var vc = storyboard.instantiateViewController(withIdentifier: "TimerVC") as! TimerVC
+        vc.currentUser = currentUser
         self.addChild(vc)
         return vc
     }()
@@ -20,6 +21,7 @@ class MainVC: UIViewController {
     private lazy var ActivityVC: ActivityVC = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var vc = storyboard.instantiateViewController(withIdentifier: "ActivityVC") as! ActivityVC
+        vc.currentUser = currentUser
         self.addChild(vc)
         return vc
     }()
@@ -49,6 +51,7 @@ class MainVC: UIViewController {
     
     @IBAction func updateView(_ sender: UIButton) {
         if let buttonTitle = sender.titleLabel?.text{
+            initNewVC()
             if buttonTitle == "TIMER" {
                 remove(asChildViewController: ActivityVC)
                 add(asChildViewController: TimerVC)
@@ -57,6 +60,14 @@ class MainVC: UIViewController {
                 add(asChildViewController: ActivityVC)
             }
         }
+    }
+    
+    private func initNewVC(){
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        ActivityVC = storyboard.instantiateViewController(withIdentifier: "ActivityVC") as! ActivityVC
+        ActivityVC.currentUser = currentUser
+        TimerVC = storyboard.instantiateViewController(withIdentifier: "TimerVC") as! TimerVC
+        TimerVC.currentUser = currentUser
     }
     
     private func add(asChildViewController viewController: UIViewController) {
