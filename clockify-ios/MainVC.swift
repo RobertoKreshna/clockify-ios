@@ -7,20 +7,70 @@
 
 import UIKit
 
-class MainVC : UIViewController {
+class MainVC: UIViewController {
+    var currentUser: User?
     
-    var currentUser: User? {
-        didSet{
-            print(currentUser?.email ?? "Email")
-        }
-    }
+    private lazy var TimerVC: TimerVC = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var vc = storyboard.instantiateViewController(withIdentifier: "TimerVC") as! TimerVC
+        self.addChild(vc)
+        return vc
+    }()
+    
+    private lazy var ActivityVC: ActivityVC = {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var vc = storyboard.instantiateViewController(withIdentifier: "ActivityVC") as! ActivityVC
+        self.addChild(vc)
+        return vc
+    }()
+    
+    @IBOutlet weak var timerTab: UIButton!
+    @IBOutlet weak var activityTab: UIButton!
+    @IBOutlet weak var contentView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeBackButton()
+        setupTab()
     }
     
-    func customizeBackButton(){
-        self.navigationItem.setHidesBackButton(true, animated:true);
+    func customizeBackButton() {
+        navigationItem.setHidesBackButton(true, animated: true)
+    }
+    
+    func setupTab(){
+        timerTab.setTitleColor(.brandAccentDisbaled, for: .normal)
+        activityTab.setTitleColor(.brandAccentDisbaled, for: .normal)
+        let button = UIButton(type: .roundedRect)
+        button.titleLabel?.text = "TIMER"
+        updateView(button)
+    }
+    
+    @IBAction func updateView(_ sender: UIButton) {
+        if let buttonTitle = sender.titleLabel?.text{
+            if buttonTitle == "TIMER" {
+                remove(asChildViewController: ActivityVC)
+                add(asChildViewController: TimerVC)
+            } else {
+                remove(asChildViewController: TimerVC)
+                add(asChildViewController: ActivityVC)
+            }
+        }
+    }
+    
+    private func add(asChildViewController viewController: UIViewController) {
+        addChild(viewController)
+        self.contentView.addSubview(viewController.view)
+        viewController.view.frame = contentView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.didMove(toParent: self)
+    }
+    
+    private func remove(asChildViewController viewController: UIViewController) {
+        viewController.willMove(toParent: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParent()
     }
 }
+

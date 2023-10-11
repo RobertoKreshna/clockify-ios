@@ -30,7 +30,11 @@ class LoginVC: UIViewController {
     }
     
     func customizeOkButton(){
-        okButton.applyGradient(colors: [UIColor.brandLightBlue.cgColor, UIColor.brandLightBlueDisabled.cgColor])
+        okButton.backgroundColor = .clear
+        okButton.applyGradient(
+            colours: [UIColor.brandLightBlue, UIColor.brandLightBlueDisabled],
+            cornerRadius: 16
+        )
     }
     
     func customizeTextField() {

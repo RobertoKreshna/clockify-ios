@@ -16,8 +16,10 @@ class EmailInputVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        signinButton.applyGradient(colors: [UIColor.brandLightBlue.cgColor, UIColor.brandLightBlueDisabled.cgColor])
+        signinButton.applyGradient(
+            colours: [UIColor.brandLightBlue, UIColor.brandLightBlueDisabled],
+            cornerRadius: 16
+        )
         emailTextField.addBottomBorderWithColor(color: .white, width: 1)
     }
     

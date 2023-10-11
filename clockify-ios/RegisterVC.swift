@@ -47,7 +47,11 @@ class RegisterVC: UIViewController {
     }
     
     func customizeButton(){
-        createButton.applyGradient(colors: [UIColor.brandLightBlue.cgColor, UIColor.brandLightBlueDisabled.cgColor])
+        createButton.backgroundColor = .clear
+        createButton.applyGradient(
+            colours: [UIColor.brandLightBlue, UIColor.brandLightBlueDisabled],
+            cornerRadius: 16
+        )
     }
     
     @IBAction func pwIconPressed(_ sender: UIButton) {

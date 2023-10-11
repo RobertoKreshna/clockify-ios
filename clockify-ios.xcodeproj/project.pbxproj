@@ -21,6 +21,10 @@
 		B819887C2ACFF80000BF6D6A /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B819887B2ACFF80000BF6D6A /* RegisterVC.swift */; };
 		B819887E2AD302FE00BF6D6A /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B819887D2AD302FE00BF6D6A /* MainVC.swift */; };
 		B81988822AD3B72A00BF6D6A /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81988812AD3B72A00BF6D6A /* AuthController.swift */; };
+		B819888C2AD5155800BF6D6A /* TimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B819888B2AD5155800BF6D6A /* TimerVC.swift */; };
+		B819888E2AD5157600BF6D6A /* ActivityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B819888D2AD5157600BF6D6A /* ActivityVC.swift */; };
+		B81988902AD63A4300BF6D6A /* TimeAndDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B819888F2AD63A4200BF6D6A /* TimeAndDate.swift */; };
+		B81988922AD647A400BF6D6A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81988912AD647A400BF6D6A /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		B819887B2ACFF80000BF6D6A /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		B819887D2AD302FE00BF6D6A /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B81988812AD3B72A00BF6D6A /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		B819888B2AD5155800BF6D6A /* TimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVC.swift; sourceTree = "<group>"; };
+		B819888D2AD5157600BF6D6A /* ActivityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVC.swift; sourceTree = "<group>"; };
+		B819888F2AD63A4200BF6D6A /* TimeAndDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndDate.swift; sourceTree = "<group>"; };
+		B81988912AD647A400BF6D6A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		C69C47CAFD38974F7CDE8340 /* Pods_clockify_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clockify_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +122,8 @@
 				B81988792ACFF7F700BF6D6A /* LoginVC.swift */,
 				B819887B2ACFF80000BF6D6A /* RegisterVC.swift */,
 				B819887D2AD302FE00BF6D6A /* MainVC.swift */,
+				B819888B2AD5155800BF6D6A /* TimerVC.swift */,
+				B819888D2AD5157600BF6D6A /* ActivityVC.swift */,
 			);
 			name = UIController;
 			sourceTree = "<group>";
@@ -123,6 +133,8 @@
 			children = (
 				B81988732ACFE46900BF6D6A /* GradientButton.swift */,
 				B81988772ACFEF3F00BF6D6A /* TextFieldExtension.swift */,
+				B819888F2AD63A4200BF6D6A /* TimeAndDate.swift */,
+				B81988912AD647A400BF6D6A /* StringExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -274,8 +286,12 @@
 				B81988622ACFB61700BF6D6A /* clockify_ios.xcdatamodeld in Sources */,
 				B81988822AD3B72A00BF6D6A /* AuthController.swift in Sources */,
 				B819887C2ACFF80000BF6D6A /* RegisterVC.swift in Sources */,
+				B819888C2AD5155800BF6D6A /* TimerVC.swift in Sources */,
 				B819887E2AD302FE00BF6D6A /* MainVC.swift in Sources */,
+				B81988902AD63A4300BF6D6A /* TimeAndDate.swift in Sources */,
+				B819888E2AD5157600BF6D6A /* ActivityVC.swift in Sources */,
 				B81988782ACFEF3F00BF6D6A /* TextFieldExtension.swift in Sources */,
+				B81988922AD647A400BF6D6A /* StringExtension.swift in Sources */,
 				B81988742ACFE46900BF6D6A /* GradientButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
