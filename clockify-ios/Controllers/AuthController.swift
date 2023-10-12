@@ -68,7 +68,6 @@ class AuthController {
             let userIndex = mailArray.firstIndex(where: { $0 == email })
 
             if passwordArray[userIndex!] == pw {
-                print("ketemu")
                 return userArray[userIndex!]
             }
         }
