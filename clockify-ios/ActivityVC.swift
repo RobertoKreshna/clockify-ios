@@ -25,6 +25,7 @@ class ActivityVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.sectionHeaderTopPadding = 0.0 //remove header separator
+        tableView.sectionFooterHeight = 0
         registerActivityCell()
     }
     
@@ -82,20 +83,20 @@ extension ActivityVC: UITableViewDelegate {
 //MARK: LOAD DATA
 extension ActivityVC {
     func loadData(with request: NSFetchRequest<Activity> = Activity.fetchRequest(), predicate: NSPredicate? = nil){
-        let categoryPredicate = NSPredicate(format: "belongsTo.email MATCHES %@", currentUser!.email!)
+        let activityPredicate = NSPredicate(format: "belongsTo.email MATCHES %@", currentUser!.email!)
         if let addtionalPredicate = predicate {
-            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, addtionalPredicate])
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [activityPredicate, addtionalPredicate])
         } else {
-            request.predicate = categoryPredicate
+            request.predicate = activityPredicate
         }
+        request.sortDescriptors = [NSSortDescriptor(key: "end", ascending: true)]
         do {
             activityArray = try context.fetch(request)
             let activityGroupedDictionary = Dictionary(grouping: activityArray, by: { TimeAndDate.getStringfromDate(start: $0.start!, end: $0.end!) })
-            activityGroupedDictionary.keys.forEach { key in
-                activityGroupedDictionaryKeys.append(key)
-            }
-            activityGroupedDictionary.values.forEach { activityList in
-                activityGroupedDictionaryValues.append(activityList)
+            let sortedGrouped = activityGroupedDictionary.sorted(by: { TimeAndDate.getDateFromStringToCompare(date:$0.key)! > TimeAndDate.getDateFromStringToCompare(date:$1.key)!})
+            sortedGrouped.forEach { Element in
+                activityGroupedDictionaryKeys.append(Element.key)
+                activityGroupedDictionaryValues.append(Element.value)
             }
         } catch {
             print("Error fetching data from context \(error)")

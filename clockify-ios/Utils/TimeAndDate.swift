@@ -19,22 +19,29 @@ class TimeAndDate {
     static func getcurrentTime() -> String {
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm:ss"
+        formatter.dateFormat = "HH:mm:ss"
         let result = formatter.string(from: date)
         return result
+    }
+    
+    static func getDateFromStringToCompare(date: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yy"
+        let date = dateFormatter.date(from: date)
+        return date
     }
     
     static func getDateFromString(date: String, time: String) -> Date? {
         let datetime = "\(date)-\(time)"
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yy-hh:mm:ss"
+        dateFormatter.dateFormat = "dd MMM yy-HH:mm:ss"
         let date = dateFormatter.date(from: datetime)
         return date
     }
     
     static func getStartToEndString(start: Date, end: Date) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm:ss"
+        formatter.dateFormat = "HH:mm:ss"
         let startResult = formatter.string(from: start)
         let endResult = formatter.string(from: end)
         return "\(startResult) - \(endResult)"

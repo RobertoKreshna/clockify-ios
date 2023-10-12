@@ -53,9 +53,13 @@ class MainVC: UIViewController {
         if let buttonTitle = sender.titleLabel?.text{
             initNewVC()
             if buttonTitle == "TIMER" {
+                timerTab.titleLabel?.textColor = .brandYellow
+                activityTab.titleLabel?.textColor = .brandAccentDisbaled
                 remove(asChildViewController: ActivityVC)
                 add(asChildViewController: TimerVC)
             } else {
+                timerTab.titleLabel?.textColor = .brandAccentDisbaled
+                activityTab.titleLabel?.textColor = .brandYellow
                 remove(asChildViewController: TimerVC)
                 add(asChildViewController: ActivityVC)
             }
