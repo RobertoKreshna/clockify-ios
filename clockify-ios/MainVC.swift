@@ -87,22 +87,8 @@ class MainVC: UIViewController {
     }
     
     private func updateTitle(isTimer: Bool){
-        let timerTitle = NSAttributedString(
-            string: "TIMER",
-            attributes: [
-                .foregroundColor: isTimer ? UIColor.brandYellow : UIColor.brandAccentDisbaled,
-                .font: UIFont(name: "NunitoSans7pt-Bold", size: 14)!
-            ]
-        )
-        let activityTitle = NSAttributedString(
-            string: "ACTIVITY",
-            attributes: [
-                .foregroundColor: isTimer ? UIColor.brandAccentDisbaled :  UIColor.brandYellow,
-                .font: UIFont(name: "NunitoSans7pt-Bold", size: 14)!
-            ]
-        )
-        timerTab.setAttributedTitle(timerTitle, for: .normal)
-        activityTab.setAttributedTitle(activityTitle, for: .normal)
+        timerTab.configuration?.baseForegroundColor = isTimer ? .brandYellow : .brandAccentDisbaled
+        activityTab.configuration?.baseForegroundColor = isTimer ? .brandAccentDisbaled : .brandYellow
     }
 }
 
