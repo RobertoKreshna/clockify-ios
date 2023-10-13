@@ -413,12 +413,11 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityVC" title="ActivityVC" id="eKx-Dl-Grs" customClass="ActivityVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8pK-Ir-LSq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-De-6vD">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="708"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-De-6vD">
+                                <rect key="frame" x="0.0" y="75" width="393" height="633"/>
                                 <color key="backgroundColor" name="brandBlue"/>
                                 <color key="separatorColor" name="brandAccentDisbaled"/>
                                 <prototypes>
@@ -432,12 +431,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrw-DS-NPK">
+                                <rect key="frame" x="16" y="16" width="361" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="22H-nS-rNQ"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="yA1-XA-1Th"/>
+                                </constraints>
+                                <color key="textColor" name="brandBlue"/>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g23-Zi-ZcX"/>
                         <color key="backgroundColor" name="brandBlue"/>
+                        <constraints>
+                            <constraint firstItem="eEb-De-6vD" firstAttribute="leading" secondItem="g23-Zi-ZcX" secondAttribute="leading" id="1Cp-ru-RdL"/>
+                            <constraint firstItem="lrw-DS-NPK" firstAttribute="top" secondItem="8pK-Ir-LSq" secondAttribute="top" constant="16" id="Ack-rc-vR6"/>
+                            <constraint firstAttribute="trailing" secondItem="lrw-DS-NPK" secondAttribute="trailing" constant="16" id="ExQ-iH-229"/>
+                            <constraint firstAttribute="bottom" secondItem="eEb-De-6vD" secondAttribute="bottom" id="aP6-eF-G0p"/>
+                            <constraint firstItem="eEb-De-6vD" firstAttribute="trailing" secondItem="g23-Zi-ZcX" secondAttribute="trailing" id="c90-2W-aSt"/>
+                            <constraint firstItem="lrw-DS-NPK" firstAttribute="leading" secondItem="8pK-Ir-LSq" secondAttribute="leading" constant="16" id="jgC-2o-EZO"/>
+                            <constraint firstItem="eEb-De-6vD" firstAttribute="top" secondItem="lrw-DS-NPK" secondAttribute="bottom" constant="19" id="tDP-HJ-wVZ"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="393" height="708"/>
                     <connections>
+                        <outlet property="searchBar" destination="lrw-DS-NPK" id="QQI-j3-DLd"/>
                         <outlet property="tableView" destination="eEb-De-6vD" id="J8j-9R-SrQ"/>
                     </connections>
                 </viewController>
@@ -602,19 +622,19 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="J2T-aK-I8c">
                                         <rect key="frame" x="130" y="0.0" width="120" height="132"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H66-M7-b1H">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H66-M7-b1H">
                                                 <rect key="frame" x="27" y="0.0" width="66" height="19.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
                                                 <color key="textColor" name="brandAccent"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2f-2M-val">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2f-2M-val">
                                                 <rect key="frame" x="55.666666666666657" y="52.333333333333321" width="8.6666666666666714" height="27.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="20"/>
                                                 <color key="textColor" name="brandAccent"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRE-Fz-xgQ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRE-Fz-xgQ">
                                                 <rect key="frame" x="57.000000000000028" y="112.66666666666669" width="6" height="19.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
                                                 <color key="textColor" name="brandAccent"/>

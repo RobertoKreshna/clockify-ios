@@ -18,20 +18,52 @@ class ActivityVC: UIViewController {
     var activityGroupedDictionaryValues = [[Activity]]()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        setupTableViewAndSearchBar()
+        customizeTableView()
+        registerActivityCell()
+        customizeSearchBar()
+    }
+    
+    func setupTableViewAndSearchBar(){
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.sectionHeaderTopPadding = 0.0 //remove header separator
-        tableView.sectionFooterHeight = 0
-        registerActivityCell()
+        searchBar.delegate = self
     }
     
     func registerActivityCell(){
         let nib = UINib.init(nibName: "ActivityTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
+    }
+    
+    func customizeSearchBar(){
+        //create button
+        let buttonView = UIButton(frame:CGRect(x: 0, y: 4, width: 32, height: 32))
+        buttonView.setImage(UIImage(named: "search"), for: .normal)
+        buttonView.addTarget(self, action: #selector(searchIconPressed), for: .touchUpInside)
+        
+        //add padding
+        let rightView: UIView = UIView(frame:CGRect(x: 0, y: 0, width: 40, height: 40))
+        rightView.backgroundColor = searchBar.backgroundColor
+        rightView.addSubview(buttonView)
+        let leftView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: 40))
+        searchBar.rightView = rightView
+        searchBar.rightViewMode = .always
+        searchBar.leftView = leftView
+        searchBar.leftViewMode = .always
+        
+        //rounded corner
+        searchBar.layer.cornerRadius = 12
+        searchBar.clipsToBounds = true
+    }
+    
+    func customizeTableView(){
+        tableView.sectionHeaderTopPadding = 0.0 //remove header separator
+        tableView.sectionFooterHeight = 0
     }
 }
 
@@ -93,7 +125,10 @@ extension ActivityVC {
         do {
             activityArray = try context.fetch(request)
             let activityGroupedDictionary = Dictionary(grouping: activityArray, by: { TimeAndDate.getStringfromDate(start: $0.start!, end: $0.end!) })
+            print(activityGroupedDictionary.count)
             let sortedGrouped = activityGroupedDictionary.sorted(by: { TimeAndDate.getDateFromStringToCompare(date:$0.key)! > TimeAndDate.getDateFromStringToCompare(date:$1.key)!})
+            activityGroupedDictionaryKeys = [String]()
+            activityGroupedDictionaryValues = [[Activity]]()
             sortedGrouped.forEach { Element in
                 activityGroupedDictionaryKeys.append(Element.key)
                 activityGroupedDictionaryValues.append(Element.value)
@@ -101,6 +136,31 @@ extension ActivityVC {
         } catch {
             print("Error fetching data from context \(error)")
         }
+        tableView.reloadData()
     }
+}
+
+//MARK: SearchBar methods
+extension ActivityVC: UITextFieldDelegate {
+    
+    @objc func searchIconPressed(_ sender: UIButton) {
+        searchBar.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let request : NSFetchRequest<Activity> = Activity.fetchRequest()
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        loadData(with: request, predicate: predicate)
+    }
+    
 }
 
