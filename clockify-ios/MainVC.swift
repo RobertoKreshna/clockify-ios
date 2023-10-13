@@ -53,13 +53,11 @@ class MainVC: UIViewController {
         if let buttonTitle = sender.titleLabel?.text{
             initNewVC()
             if buttonTitle == "TIMER" {
-                timerTab.titleLabel?.textColor = .brandYellow
-                activityTab.titleLabel?.textColor = .brandAccentDisbaled
+                updateTitle(isTimer: true)
                 remove(asChildViewController: ActivityVC)
                 add(asChildViewController: TimerVC)
-            } else {
-                timerTab.titleLabel?.textColor = .brandAccentDisbaled
-                activityTab.titleLabel?.textColor = .brandYellow
+            } else if buttonTitle == "ACTIVITY"{
+                updateTitle(isTimer: false)
                 remove(asChildViewController: TimerVC)
                 add(asChildViewController: ActivityVC)
             }
@@ -86,6 +84,25 @@ class MainVC: UIViewController {
         viewController.willMove(toParent: nil)
         viewController.view.removeFromSuperview()
         viewController.removeFromParent()
+    }
+    
+    private func updateTitle(isTimer: Bool){
+        let timerTitle = NSAttributedString(
+            string: "TIMER",
+            attributes: [
+                .foregroundColor: isTimer ? UIColor.brandYellow : UIColor.brandAccentDisbaled,
+                .font: UIFont(name: "NunitoSans7pt-Bold", size: 14)!
+            ]
+        )
+        let activityTitle = NSAttributedString(
+            string: "ACTIVITY",
+            attributes: [
+                .foregroundColor: isTimer ? UIColor.brandAccentDisbaled :  UIColor.brandYellow,
+                .font: UIFont(name: "NunitoSans7pt-Bold", size: 14)!
+            ]
+        )
+        timerTab.setAttributedTitle(timerTitle, for: .normal)
+        activityTab.setAttributedTitle(activityTitle, for: .normal)
     }
 }
 
