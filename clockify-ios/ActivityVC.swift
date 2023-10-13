@@ -125,7 +125,6 @@ extension ActivityVC {
         do {
             activityArray = try context.fetch(request)
             let activityGroupedDictionary = Dictionary(grouping: activityArray, by: { TimeAndDate.getStringfromDate(start: $0.start!, end: $0.end!) })
-            print(activityGroupedDictionary.count)
             let sortedGrouped = activityGroupedDictionary.sorted(by: { TimeAndDate.getDateFromStringToCompare(date:$0.key)! > TimeAndDate.getDateFromStringToCompare(date:$1.key)!})
             activityGroupedDictionaryKeys = [String]()
             activityGroupedDictionaryValues = [[Activity]]()
@@ -157,9 +156,14 @@ extension ActivityVC: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let request : NSFetchRequest<Activity> = Activity.fetchRequest()
-        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
-        loadData(with: request, predicate: predicate)
+        if(textField.text != ""){
+            let request : NSFetchRequest<Activity> = Activity.fetchRequest()
+            let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+            loadData(with: request, predicate: predicate)
+        }
+        else {
+            loadData()
+        }
     }
     
 }
