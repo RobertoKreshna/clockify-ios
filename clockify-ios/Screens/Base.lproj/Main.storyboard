@@ -417,7 +417,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-De-6vD">
-                                <rect key="frame" x="0.0" y="75" width="393" height="633"/>
+                                <rect key="frame" x="0.0" y="72" width="393" height="636"/>
                                 <color key="backgroundColor" name="brandBlue"/>
                                 <color key="separatorColor" name="brandAccentDisbaled"/>
                                 <prototypes>
@@ -431,33 +431,49 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrw-DS-NPK">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s8I-xU-ciX">
                                 <rect key="frame" x="16" y="16" width="361" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Activity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lrw-DS-NPK">
+                                        <rect key="frame" x="0.0" y="0.0" width="225.66666666666666" height="40"/>
+                                        <color key="textColor" name="brandBlue"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="633-bR-pPb">
+                                        <rect key="frame" x="233.66666666666666" y="0.0" width="127.33333333333334" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="dropdown" imagePlacement="trailing" title="Latest Date" imagePadding="0.0">
+                                            <fontDescription key="titleFontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                            <color key="baseForegroundColor" name="brandAccent"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="sortButtonPressed" destination="eKx-Dl-Grs" eventType="touchUpInside" id="b4V-xC-ocT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="22H-nS-rNQ"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="yA1-XA-1Th"/>
+                                    <constraint firstAttribute="height" constant="40" id="VbI-sU-qYt"/>
                                 </constraints>
-                                <color key="textColor" name="brandBlue"/>
-                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                            </textField>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g23-Zi-ZcX"/>
                         <color key="backgroundColor" name="brandBlue"/>
                         <constraints>
-                            <constraint firstItem="eEb-De-6vD" firstAttribute="leading" secondItem="g23-Zi-ZcX" secondAttribute="leading" id="1Cp-ru-RdL"/>
-                            <constraint firstItem="lrw-DS-NPK" firstAttribute="top" secondItem="8pK-Ir-LSq" secondAttribute="top" constant="16" id="Ack-rc-vR6"/>
-                            <constraint firstAttribute="trailing" secondItem="lrw-DS-NPK" secondAttribute="trailing" constant="16" id="ExQ-iH-229"/>
-                            <constraint firstAttribute="bottom" secondItem="eEb-De-6vD" secondAttribute="bottom" id="aP6-eF-G0p"/>
-                            <constraint firstItem="eEb-De-6vD" firstAttribute="trailing" secondItem="g23-Zi-ZcX" secondAttribute="trailing" id="c90-2W-aSt"/>
-                            <constraint firstItem="lrw-DS-NPK" firstAttribute="leading" secondItem="8pK-Ir-LSq" secondAttribute="leading" constant="16" id="jgC-2o-EZO"/>
-                            <constraint firstItem="eEb-De-6vD" firstAttribute="top" secondItem="lrw-DS-NPK" secondAttribute="bottom" constant="19" id="tDP-HJ-wVZ"/>
+                            <constraint firstItem="eEb-De-6vD" firstAttribute="leading" secondItem="g23-Zi-ZcX" secondAttribute="leading" id="68Y-Ej-Riy"/>
+                            <constraint firstItem="g23-Zi-ZcX" firstAttribute="trailing" secondItem="s8I-xU-ciX" secondAttribute="trailing" constant="16" id="9z0-ep-tuH"/>
+                            <constraint firstItem="s8I-xU-ciX" firstAttribute="leading" secondItem="g23-Zi-ZcX" secondAttribute="leading" constant="16" id="ETF-8y-pgC"/>
+                            <constraint firstAttribute="bottom" secondItem="eEb-De-6vD" secondAttribute="bottom" id="Pj1-jV-Nv0"/>
+                            <constraint firstItem="s8I-xU-ciX" firstAttribute="top" secondItem="8pK-Ir-LSq" secondAttribute="top" constant="16" id="aip-CD-Axd"/>
+                            <constraint firstItem="eEb-De-6vD" firstAttribute="top" secondItem="s8I-xU-ciX" secondAttribute="bottom" constant="16" id="cPy-ev-uuy"/>
+                            <constraint firstItem="eEb-De-6vD" firstAttribute="trailing" secondItem="g23-Zi-ZcX" secondAttribute="trailing" id="obx-D0-S6q"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="393" height="708"/>
                     <connections>
                         <outlet property="searchBar" destination="lrw-DS-NPK" id="QQI-j3-DLd"/>
+                        <outlet property="sortButton" destination="633-bR-pPb" id="nJM-d8-dI4"/>
                         <outlet property="tableView" destination="eEb-De-6vD" id="J8j-9R-SrQ"/>
                     </connections>
                 </viewController>
@@ -747,6 +763,7 @@
         <segue reference="aRw-11-b94"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="dropdown" width="20" height="20"/>
         <image name="e-mail" width="32" height="32"/>
         <image name="eye-off" width="32" height="32"/>
         <image name="location" width="32" height="32"/>

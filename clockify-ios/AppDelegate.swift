@@ -8,6 +8,7 @@
 import CoreData
 import UIKit
 import IQKeyboardManagerSwift
+import DropDown
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        DropDown.startListeningToKeyboard()
         return true
     }
 

@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import DropDown
 
 class ActivityVC: UIViewController {
     var currentUser: User?
@@ -17,8 +18,11 @@ class ActivityVC: UIViewController {
     var activityGroupedDictionaryKeys = [String]()
     var activityGroupedDictionaryValues = [[Activity]]()
     
+    let sortDropdown = DropDown()
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UITextField!
+    @IBOutlet weak var sortButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,8 @@ class ActivityVC: UIViewController {
         customizeTableView()
         registerActivityCell()
         customizeSearchBar()
+        customizeSortButton()
+        initSortDropdown()
     }
     
     func setupTableViewAndSearchBar(){
@@ -64,6 +70,11 @@ class ActivityVC: UIViewController {
     func customizeTableView(){
         tableView.sectionHeaderTopPadding = 0.0 //remove header separator
         tableView.sectionFooterHeight = 0
+    }
+    
+    func customizeSortButton(){
+        sortButton.configuration?.baseBackgroundColor = .brandBlueDisabled
+        sortButton.layer.cornerRadius = 16
     }
 }
 
@@ -166,5 +177,38 @@ extension ActivityVC: UITextFieldDelegate {
         }
     }
     
+}
+
+//MARK: Sorting
+extension ActivityVC {
+    func initSortDropdown(){
+        //data
+        sortDropdown.dataSource = [ "Latest Date", "Nearby" ]
+        //location
+        sortDropdown.anchorView = sortButton
+        sortDropdown.direction = .bottom
+        sortDropdown.bottomOffset = CGPoint(x: 0, y: 48)
+        //ui
+        sortDropdown.width = sortButton.bounds.width
+        sortDropdown.backgroundColor = .brandAccent
+        sortDropdown.textColor = .brandBlue
+        sortDropdown.cornerRadius = 8
+        //action when pressed
+        sortDropdown.selectionAction = { (index: Int, item: String) in
+            if let font = UIFont(name: "NunitoSans7pt-Regular", size: 14){
+                self.sortButton.setAttributedTitle(
+                    NSAttributedString(
+                        string: item,
+                        attributes: [NSAttributedString.Key.font : font]
+                    ),
+                    for: .normal
+                )
+            }
+        }
+    }
+    
+    @IBAction func sortButtonPressed(){
+        sortDropdown.show()
+    }
 }
 
