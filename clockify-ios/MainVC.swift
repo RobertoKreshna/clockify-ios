@@ -29,6 +29,8 @@ class MainVC: UIViewController {
     @IBOutlet weak var timerTab: UIButton!
     @IBOutlet weak var activityTab: UIButton!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var timerLine: UIView!
+    @IBOutlet weak var activityLine: UIView!
     
     
     override func viewDidLoad() {
@@ -89,6 +91,8 @@ class MainVC: UIViewController {
     private func updateTitle(isTimer: Bool){
         timerTab.configuration?.baseForegroundColor = isTimer ? .brandYellow : .brandAccentDisbaled
         activityTab.configuration?.baseForegroundColor = isTimer ? .brandAccentDisbaled : .brandYellow
+        timerLine.backgroundColor = isTimer ? .brandYellow : .brandBlue
+        activityLine.backgroundColor = isTimer ? .brandBlue : .brandYellow
     }
 }
 

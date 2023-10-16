@@ -24,6 +24,20 @@ class TimeAndDate {
         return result
     }
     
+    static func displayDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yy"
+        let result = formatter.string(from: date)
+        return result
+    }
+    
+    static func displayTime(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        let result = formatter.string(from: date)
+        return result
+    }
+    
     static func getDateFromStringToCompare(date: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yy"
@@ -55,5 +69,24 @@ class TimeAndDate {
         } else {
             return formatter.string(from: end)
         }
+    }
+    
+    static func getHourFromDuration(duration: String) -> String {
+        let index = duration.firstIndex(of: ":")!
+        let res = String(duration[..<index])
+        return res
+    }
+    
+    static func getMinuteFromDuration(duration: String) -> String {
+        let firstIndex = duration.index(duration.firstIndex(of: ":")!, offsetBy: 1)
+        let lastIndex = duration.lastIndex(of: ":")!
+        let res = String(duration[firstIndex..<lastIndex])
+        return res
+    }
+    
+    static func getSecondFromDuration(duration: String) -> String {
+        let index = duration.index(duration.lastIndex(of: ":")!, offsetBy: 1)
+        let res = String(duration[index...])
+        return res
     }
 }

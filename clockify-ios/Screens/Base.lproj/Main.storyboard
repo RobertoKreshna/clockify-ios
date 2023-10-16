@@ -351,13 +351,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="pBO-sh-fXx">
-                                <rect key="frame" x="102" y="71" width="189" height="40"/>
+                                <rect key="frame" x="118.66666666666669" y="60" width="156" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="X2c-f2-B5n"/>
+                                </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-Lq-kR9">
-                                <rect key="frame" x="16" y="111" width="361" height="33.333333333333343"/>
+                                <rect key="frame" x="96.333333333333329" y="111" width="200.66666666666669" height="33.333333333333343"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRG-CZ-9y5">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="33.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="92.333333333333329" height="33.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="TIMER">
                                             <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="14"/>
@@ -368,7 +371,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8K-xR-2w3">
-                                        <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="33.333333333333336"/>
+                                        <rect key="frame" x="108.33333333333334" y="0.0" width="92.333333333333343" height="33.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="ACTIVITY">
                                             <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="14"/>
@@ -381,7 +384,17 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tt2-sK-TYd">
-                                <rect key="frame" x="0.0" y="144" width="393" height="708"/>
+                                <rect key="frame" x="0.0" y="152" width="393" height="700"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNg-hg-9mX">
+                                <rect key="frame" x="131" y="144" width="24" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="brandYellow"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHP-we-uP5">
+                                <rect key="frame" x="239" y="144" width="24" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -389,19 +402,20 @@
                         <viewLayoutGuide key="safeArea" id="avQ-ef-G2B"/>
                         <color key="backgroundColor" name="brandBlue"/>
                         <constraints>
-                            <constraint firstItem="avQ-ef-G2B" firstAttribute="trailing" secondItem="uWa-Lq-kR9" secondAttribute="trailing" constant="16" id="AyN-S1-9Q5"/>
-                            <constraint firstItem="pBO-sh-fXx" firstAttribute="top" secondItem="avQ-ef-G2B" secondAttribute="top" constant="-32" id="F3Q-4g-bkK"/>
-                            <constraint firstItem="uWa-Lq-kR9" firstAttribute="top" secondItem="pBO-sh-fXx" secondAttribute="bottom" id="OcK-Nf-X3n"/>
-                            <constraint firstItem="avQ-ef-G2B" firstAttribute="trailing" secondItem="pBO-sh-fXx" secondAttribute="trailing" constant="102" id="RV7-ef-Scu"/>
-                            <constraint firstItem="uWa-Lq-kR9" firstAttribute="leading" secondItem="avQ-ef-G2B" secondAttribute="leading" constant="16" id="TaE-kq-XqG"/>
-                            <constraint firstItem="pBO-sh-fXx" firstAttribute="leading" secondItem="avQ-ef-G2B" secondAttribute="leading" constant="102" id="vTr-gJ-lOF"/>
+                            <constraint firstItem="pBO-sh-fXx" firstAttribute="top" secondItem="m29-gb-ioo" secondAttribute="top" constant="60" id="D16-d8-ayn"/>
+                            <constraint firstItem="uWa-Lq-kR9" firstAttribute="centerX" secondItem="m29-gb-ioo" secondAttribute="centerX" id="EHU-tW-eYp"/>
+                            <constraint firstItem="uWa-Lq-kR9" firstAttribute="top" secondItem="avQ-ef-G2B" secondAttribute="top" constant="8" id="Hn5-TU-lUt"/>
+                            <constraint firstItem="pBO-sh-fXx" firstAttribute="centerX" secondItem="m29-gb-ioo" secondAttribute="centerX" id="Vg4-Fe-HSo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="60M-eB-5e8"/>
                     <connections>
+                        <outlet property="activityLine" destination="MHP-we-uP5" id="7vR-MM-f0F"/>
                         <outlet property="activityTab" destination="R8K-xR-2w3" id="ZBe-eS-tCq"/>
                         <outlet property="contentView" destination="tt2-sK-TYd" id="dY5-V7-QDb"/>
+                        <outlet property="timerLine" destination="QNg-hg-9mX" id="c08-rQ-wJ7"/>
                         <outlet property="timerTab" destination="aRG-CZ-9y5" id="nnF-Ca-glZ"/>
+                        <segue destination="aUv-Vw-CZH" kind="show" identifier="notUsed" id="y3F-P0-hvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LYr-Tg-Yn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -413,11 +427,11 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityVC" title="ActivityVC" id="eKx-Dl-Grs" customClass="ActivityVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8pK-Ir-LSq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="708"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-De-6vD">
-                                <rect key="frame" x="0.0" y="72" width="393" height="636"/>
+                                <rect key="frame" x="0.0" y="72" width="393" height="628"/>
                                 <color key="backgroundColor" name="brandBlue"/>
                                 <color key="separatorColor" name="brandAccentDisbaled"/>
                                 <prototypes>
@@ -470,7 +484,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="393" height="708"/>
+                    <size key="freeformSize" width="393" height="700"/>
                     <connections>
                         <outlet property="searchBar" destination="lrw-DS-NPK" id="QQI-j3-DLd"/>
                         <outlet property="sortButton" destination="633-bR-pPb" id="nJM-d8-dI4"/>
@@ -480,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78b-Qj-3HQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4842" y="642"/>
+            <point key="canvasLocation" x="3222" y="1406"/>
         </scene>
         <!--TimerVC-->
         <scene sceneID="8z6-wY-omT">
@@ -757,26 +771,218 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cL9-Zf-6PQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4036" y="29"/>
+            <point key="canvasLocation" x="3221" y="737"/>
         </scene>
         <!--Activity DetailVC-->
         <scene sceneID="dHf-u2-dna">
             <objects>
                 <viewController id="aUv-Vw-CZH" customClass="ActivityDetailVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OJK-aI-4WZ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N3P-Mo-s5T">
+                                <rect key="frame" x="71.666666666666686" y="376" width="250" height="132"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="n2z-Bh-PSQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="132"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-9Z-YCJ">
+                                                <rect key="frame" x="22.333333333333329" y="0.0" width="75.333333333333329" height="19.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                                <color key="textColor" name="brandAccent"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-Sk-pRF">
+                                                <rect key="frame" x="55.666666666666657" y="52.333333333333321" width="8.6666666666666714" height="27.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="20"/>
+                                                <color key="textColor" name="brandAccent"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-b8-ZWr">
+                                                <rect key="frame" x="56.999999999999986" y="112.66666666666669" width="6" height="19.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                                <color key="textColor" name="brandAccent"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="kCQ-DL-HiO"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="DEo-BF-5hC">
+                                        <rect key="frame" x="130" y="0.0" width="120" height="132"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bq-Hw-jGg">
+                                                <rect key="frame" x="27" y="0.0" width="66" height="19.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                                <color key="textColor" name="brandAccent"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4v-0Z-QJa">
+                                                <rect key="frame" x="55.666666666666657" y="52.333333333333321" width="8.6666666666666714" height="27.333333333333336"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="20"/>
+                                                <color key="textColor" name="brandAccent"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj6-K2-AGv">
+                                                <rect key="frame" x="57.000000000000028" y="112.66666666666669" width="6" height="19.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                                <color key="textColor" name="brandAccent"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="zhz-GZ-J4x"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c18-wd-cHZ">
+                                <rect key="frame" x="73.000000000000014" y="221.33333333333334" width="247.33333333333337" height="54.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zui-IY-HDY">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="54.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="40"/>
+                                        <color key="textColor" name="brandAccent"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C68-dz-KKB">
+                                        <rect key="frame" x="68" y="0.0" width="11.666666666666671" height="54.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="40"/>
+                                        <color key="textColor" name="brandAccent"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0d-rd-PYg">
+                                        <rect key="frame" x="99.666666666666657" y="0.0" width="48" height="54.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="40"/>
+                                        <color key="textColor" name="brandAccent"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8B-L6-ZMJ">
+                                        <rect key="frame" x="167.66666666666666" y="0.0" width="11.666666666666657" height="54.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="40"/>
+                                        <color key="textColor" name="brandAccent"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghu-r7-iot">
+                                        <rect key="frame" x="199.33333333333331" y="0.0" width="48" height="54.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="40"/>
+                                        <color key="textColor" name="brandAccent"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="L9n-69-r3w">
+                                <rect key="frame" x="16" y="754" width="361" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gK5-d1-FfR">
+                                        <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="48"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="rSJ-oY-YTo"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="SAVE">
+                                            <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="14"/>
+                                            <color key="baseForegroundColor" name="brandAccent"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="savePressed:" destination="j1C-gj-05a" eventType="touchUpInside" id="L7K-4Z-K61"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWN-II-4zG">
+                                        <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="48"/>
+                                        <color key="backgroundColor" name="brandAccent"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="VWv-eN-KsP"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="DELETE">
+                                            <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="14"/>
+                                            <color key="baseForegroundColor" name="brandAccentDisbaled"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deletePressed:" destination="j1C-gj-05a" eventType="touchUpInside" id="XIW-bj-BGc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write your activity here ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nLW-wz-Q2R">
+                                <rect key="frame" x="16" y="630" width="361" height="96"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="xOD-6l-t7k"/>
+                                </constraints>
+                                <color key="textColor" name="brandAccentDisbaled"/>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="BYO-Oo-G30">
+                                <rect key="frame" x="126.33333333333333" y="538" width="140.33333333333337" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="9XK-V3-TmY">
+                                        <rect key="frame" x="12.000000000000014" y="8" width="32" height="32"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y13-jh-Phk">
+                                        <rect key="frame" x="68.000000000000014" y="8" width="60.333333333333329" height="32"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
+                                        <color key="textColor" name="brandAccent"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="brandBlueDisabled"/>
+                                <edgeInsets key="layoutMargins" top="8" left="12" bottom="8" right="12"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-ES-F8f">
+                                <rect key="frame" x="176.33333333333334" y="143" width="40.333333333333343" height="22"/>
+                                <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="16"/>
+                                <color key="textColor" name="brandYellow"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="S8B-Ne-DmY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="brandBlue"/>
+                        <constraints>
+                            <constraint firstItem="8ku-ES-F8f" firstAttribute="centerX" secondItem="OJK-aI-4WZ" secondAttribute="centerX" id="CNS-uA-0tg"/>
+                            <constraint firstItem="8ku-ES-F8f" firstAttribute="top" secondItem="S8B-Ne-DmY" secondAttribute="top" constant="40" id="Eej-tP-lH2"/>
+                            <constraint firstItem="L9n-69-r3w" firstAttribute="leading" secondItem="S8B-Ne-DmY" secondAttribute="leading" constant="16" id="Fu8-tc-6xQ"/>
+                            <constraint firstItem="L9n-69-r3w" firstAttribute="top" secondItem="nLW-wz-Q2R" secondAttribute="bottom" constant="28" id="MEw-rD-myk"/>
+                            <constraint firstItem="S8B-Ne-DmY" firstAttribute="bottom" secondItem="L9n-69-r3w" secondAttribute="bottom" constant="16" id="NN1-43-DzM"/>
+                            <constraint firstItem="N3P-Mo-s5T" firstAttribute="centerX" secondItem="OJK-aI-4WZ" secondAttribute="centerX" id="SYo-B7-wRh"/>
+                            <constraint firstItem="nLW-wz-Q2R" firstAttribute="top" secondItem="BYO-Oo-G30" secondAttribute="bottom" constant="44" id="TnV-1f-JQ7"/>
+                            <constraint firstItem="BYO-Oo-G30" firstAttribute="top" secondItem="N3P-Mo-s5T" secondAttribute="bottom" constant="30" id="XkB-OS-HrZ"/>
+                            <constraint firstItem="S8B-Ne-DmY" firstAttribute="trailing" secondItem="nLW-wz-Q2R" secondAttribute="trailing" constant="16" id="eww-xZ-ieC"/>
+                            <constraint firstItem="N3P-Mo-s5T" firstAttribute="top" secondItem="c18-wd-cHZ" secondAttribute="bottom" constant="100" id="jFR-gP-Ujy"/>
+                            <constraint firstItem="BYO-Oo-G30" firstAttribute="centerX" secondItem="OJK-aI-4WZ" secondAttribute="centerX" id="k0G-pb-JfN"/>
+                            <constraint firstItem="c18-wd-cHZ" firstAttribute="centerX" secondItem="OJK-aI-4WZ" secondAttribute="centerX" id="kzQ-C7-47k"/>
+                            <constraint firstItem="nLW-wz-Q2R" firstAttribute="leading" secondItem="S8B-Ne-DmY" secondAttribute="leading" constant="16" id="lbm-iP-hcA"/>
+                            <constraint firstItem="S8B-Ne-DmY" firstAttribute="trailing" secondItem="L9n-69-r3w" secondAttribute="trailing" constant="16" id="x5Y-O7-75D"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nhd-Lb-bZ0"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="8ku-ES-F8f" id="58J-p5-J5P"/>
+                        <outlet property="deleteButton" destination="AWN-II-4zG" id="mKN-Wo-4Y1"/>
+                        <outlet property="endDateLabel" destination="tj6-K2-AGv" id="5xQ-qi-4Ef"/>
+                        <outlet property="endTimeLabel" destination="H4v-0Z-QJa" id="IIG-UX-N5I"/>
+                        <outlet property="hourLabel" destination="zui-IY-HDY" id="so1-Yq-V8R"/>
+                        <outlet property="locationLabel" destination="y13-jh-Phk" id="K6p-Lf-f9Z"/>
+                        <outlet property="minuteLabel" destination="l0d-rd-PYg" id="1lK-Hj-l6G"/>
+                        <outlet property="saveButton" destination="gK5-d1-FfR" id="6EH-K6-N8h"/>
+                        <outlet property="secondLabel" destination="Ghu-r7-iot" id="T3u-Qk-8Cd"/>
+                        <outlet property="startDateLabel" destination="vSI-b8-ZWr" id="hig-hv-MYe"/>
+                        <outlet property="startTimeLabel" destination="3ob-Sk-pRF" id="Hxo-9T-bLp"/>
+                        <outlet property="titleTextView" destination="nLW-wz-Q2R" id="eK1-m6-BZA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQf-be-3lP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5653" y="29"/>
+            <point key="canvasLocation" x="4118" y="29"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="y3F-P0-hvk"/>
         <segue reference="0uA-fG-d7J"/>
     </inferredMetricsTieBreakers>
     <resources>
