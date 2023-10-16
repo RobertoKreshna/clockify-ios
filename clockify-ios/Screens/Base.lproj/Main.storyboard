@@ -416,7 +416,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="708"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-De-6vD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-De-6vD">
                                 <rect key="frame" x="0.0" y="72" width="393" height="636"/>
                                 <color key="backgroundColor" name="brandBlue"/>
                                 <color key="separatorColor" name="brandAccentDisbaled"/>
@@ -475,11 +475,12 @@
                         <outlet property="searchBar" destination="lrw-DS-NPK" id="QQI-j3-DLd"/>
                         <outlet property="sortButton" destination="633-bR-pPb" id="nJM-d8-dI4"/>
                         <outlet property="tableView" destination="eEb-De-6vD" id="J8j-9R-SrQ"/>
+                        <segue destination="aUv-Vw-CZH" kind="show" identifier="goToDetail" id="Qpp-t9-cav"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78b-Qj-3HQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4774.8091603053435" y="28.87323943661972"/>
+            <point key="canvasLocation" x="4842" y="642"/>
         </scene>
         <!--TimerVC-->
         <scene sceneID="8z6-wY-omT">
@@ -756,11 +757,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cL9-Zf-6PQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4043.5114503816794" y="28.87323943661972"/>
+            <point key="canvasLocation" x="4036" y="29"/>
+        </scene>
+        <!--Activity DetailVC-->
+        <scene sceneID="dHf-u2-dna">
+            <objects>
+                <viewController id="aUv-Vw-CZH" customClass="ActivityDetailVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OJK-aI-4WZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="S8B-Ne-DmY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nhd-Lb-bZ0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQf-be-3lP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5653" y="29"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aRw-11-b94"/>
+        <segue reference="0uA-fG-d7J"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="dropdown" width="20" height="20"/>

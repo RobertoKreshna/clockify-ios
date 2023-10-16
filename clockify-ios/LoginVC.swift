@@ -42,10 +42,18 @@ class LoginVC: UIViewController {
     }
     
     func customizeBackButton(){
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back-blue")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back-blue")
-        navigationController?.navigationBar.tintColor = .brandBlue
-        navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
+        navigationItem.backButtonDisplayMode = .minimal
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "back-blue"),
+            style: .plain,
+            target: self,
+            action: #selector(handleBackButtonTapped)
+        )
+        navigationItem.leftBarButtonItem?.tintColor = .brandBlue
+    }
+    
+    @objc private func handleBackButtonTapped() {
+       navigationController?.popViewController(animated: true)
     }
 
     @IBAction func pwIconPressed(_ sender: UIButton) {

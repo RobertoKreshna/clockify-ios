@@ -42,6 +42,7 @@
 		B81988BD2AD7CE5800BF6D6A /* NunitoSans_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81988AF2AD7CE4300BF6D6A /* NunitoSans_Regular.ttf */; };
 		B81988BE2AD7CE5800BF6D6A /* NunitoSans_SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81988A52AD7CE4200BF6D6A /* NunitoSans_SemiBold.ttf */; };
 		B81988BF2AD7CE5800BF6D6A /* NunitoSans_SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B81988AB2AD7CE4200BF6D6A /* NunitoSans_SemiBoldItalic.ttf */; };
+		B8E221E12ADD295800128DD0 /* ActivityDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E221E02ADD295800128DD0 /* ActivityDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		B81988AD2AD7CE4300BF6D6A /* NunitoSans_MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NunitoSans_MediumItalic.ttf; sourceTree = "<group>"; };
 		B81988AE2AD7CE4300BF6D6A /* NunitoSans_BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NunitoSans_BoldItalic.ttf; sourceTree = "<group>"; };
 		B81988AF2AD7CE4300BF6D6A /* NunitoSans_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NunitoSans_Regular.ttf; sourceTree = "<group>"; };
+		B8E221E02ADD295800128DD0 /* ActivityDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailVC.swift; sourceTree = "<group>"; };
 		C69C47CAFD38974F7CDE8340 /* Pods_clockify_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clockify_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -174,6 +176,7 @@
 				B819887D2AD302FE00BF6D6A /* MainVC.swift */,
 				B819888B2AD5155800BF6D6A /* TimerVC.swift */,
 				B819888D2AD5157600BF6D6A /* ActivityVC.swift */,
+				B8E221E02ADD295800128DD0 /* ActivityDetailVC.swift */,
 			);
 			name = UIController;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B819885C2ACFB61700BF6D6A /* EmailInputVC.swift in Sources */,
+				B8E221E12ADD295800128DD0 /* ActivityDetailVC.swift in Sources */,
 				B81988582ACFB61700BF6D6A /* AppDelegate.swift in Sources */,
 				B819887A2ACFF7F700BF6D6A /* LoginVC.swift in Sources */,
 				B81988622ACFB61700BF6D6A /* clockify_ios.xcdatamodeld in Sources */,

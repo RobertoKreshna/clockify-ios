@@ -24,6 +24,8 @@ class ActivityVC: UIViewController {
     let locationManager = CLLocationManager()
     var currentLocation : CLLocation?
     
+    var selectedActivity: Activity?
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UITextField!
     @IBOutlet weak var sortButton: UIButton!
@@ -81,6 +83,13 @@ class ActivityVC: UIViewController {
         sortButton.configuration?.baseBackgroundColor = .brandBlueDisabled
         sortButton.layer.cornerRadius = 16
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetail" {
+            let destinationVC = segue.destination as! ActivityDetailVC
+            destinationVC.activity = selectedActivity
+        }
+    }
 }
 
 //MARK: Table View Data Source
@@ -125,6 +134,13 @@ extension ActivityVC: UITableViewDelegate {
         label.font = UIFont(name: "NunitoSans7pt-Bold", size: 12)
         label.textColor = .brandYellow
         return header
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let activity = activityGroupedDictionaryValues[indexPath.section][indexPath.row]
+        selectedActivity = activity
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "goToDetail", sender: self)
     }
 }
 
@@ -256,8 +272,8 @@ extension ActivityVC {
     }
 }
 
+//MARK: Location
 extension ActivityVC : CLLocationManagerDelegate {
-    
     func setupLocation(){
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
