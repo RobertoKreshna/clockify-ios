@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import DropDown
+import CoreLocation
 
 class ActivityVC: UIViewController {
     var currentUser: User?
@@ -19,6 +20,9 @@ class ActivityVC: UIViewController {
     var activityGroupedDictionaryValues = [[Activity]]()
     
     let sortDropdown = DropDown()
+    
+    let locationManager = CLLocationManager()
+    var currentLocation : CLLocation?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UITextField!
@@ -33,6 +37,7 @@ class ActivityVC: UIViewController {
         customizeSearchBar()
         customizeSortButton()
         initSortDropdown()
+        setupLocation()
     }
     
     func setupTableViewAndSearchBar(){
@@ -125,28 +130,36 @@ extension ActivityVC: UITableViewDelegate {
 
 //MARK: LOAD DATA
 extension ActivityVC {
-    func loadData(with request: NSFetchRequest<Activity> = Activity.fetchRequest(), predicate: NSPredicate? = nil){
+    func loadData(
+        with request: NSFetchRequest<Activity> = Activity.fetchRequest(),
+        predicate: NSPredicate? = nil,
+        sortBy: String = "Latest Date"
+    ){
         let activityPredicate = NSPredicate(format: "belongsTo.email MATCHES %@", currentUser!.email!)
         if let addtionalPredicate = predicate {
             request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [activityPredicate, addtionalPredicate])
         } else {
             request.predicate = activityPredicate
         }
-        request.sortDescriptors = [NSSortDescriptor(key: "end", ascending: true)]
-        do {
-            activityArray = try context.fetch(request)
-            let activityGroupedDictionary = Dictionary(grouping: activityArray, by: { TimeAndDate.getStringfromDate(start: $0.start!, end: $0.end!) })
-            let sortedGrouped = activityGroupedDictionary.sorted(by: { TimeAndDate.getDateFromStringToCompare(date:$0.key)! > TimeAndDate.getDateFromStringToCompare(date:$1.key)!})
-            activityGroupedDictionaryKeys = [String]()
-            activityGroupedDictionaryValues = [[Activity]]()
-            sortedGrouped.forEach { Element in
-                activityGroupedDictionaryKeys.append(Element.key)
-                activityGroupedDictionaryValues.append(Element.value)
+        request.sortDescriptors = [NSSortDescriptor(key: "end", ascending: false)]
+            do {
+                resetData()
+                activityArray = try context.fetch(request)
+                if(sortBy == "Latest Date"){
+                    sortLatest()
+                } else if (sortBy == "Nearby"){
+                    sortNearby()
+                }
+            } catch {
+                print("Error fetching data from context \(error)")
             }
-        } catch {
-            print("Error fetching data from context \(error)")
-        }
         tableView.reloadData()
+    }
+    
+    func resetData(){
+        activityArray = []
+        activityGroupedDictionaryKeys = []
+        activityGroupedDictionaryValues = []
     }
 }
 
@@ -196,6 +209,7 @@ extension ActivityVC {
         //action when pressed
         sortDropdown.selectionAction = { (index: Int, item: String) in
             if let font = UIFont(name: "NunitoSans7pt-Regular", size: 14){
+                //update label
                 self.sortButton.setAttributedTitle(
                     NSAttributedString(
                         string: item,
@@ -203,12 +217,57 @@ extension ActivityVC {
                     ),
                     for: .normal
                 )
+                //sort ulang
+                self.loadData(sortBy: item)
             }
         }
     }
     
     @IBAction func sortButtonPressed(){
         sortDropdown.show()
+    }
+    
+    
+    func sortLatest(){
+        let activityGroupedDictionary = Dictionary(grouping: activityArray, by: { TimeAndDate.getStringfromDate(start: $0.start!, end: $0.end!) })
+        let sortedGrouped = activityGroupedDictionary.sorted(by: { TimeAndDate.getDateFromStringToCompare(date:$0.key)! > TimeAndDate.getDateFromStringToCompare(date:$1.key)!})
+        activityGroupedDictionaryKeys = [String]()
+        activityGroupedDictionaryValues = [[Activity]]()
+        sortedGrouped.forEach { Element in
+            activityGroupedDictionaryKeys.append(Element.key)
+            activityGroupedDictionaryValues.append(Element.value)
+        }
+    }
+    
+    func sortNearby(){
+        var locationDistanceArray = [CLLocationDistance]()
+        activityArray.forEach { Activity in
+            let distance = currentLocation?.distance(from: CLLocation(latitude: Double(Activity.latitude!)!, longitude: Double(Activity.longitude!)!))
+            locationDistanceArray.append(distance!)
+        }
+        let combined = zip(locationDistanceArray, activityArray).sorted {$0.0 < $1.0}
+        let activityAfterSort = combined.map {$0.1}
+        activityAfterSort.forEach { Activity in
+            let key = TimeAndDate.getStringfromDate(start: Activity.start!, end: Activity.end!)
+            let activity = [Activity]
+            activityGroupedDictionaryKeys.append(key)
+            activityGroupedDictionaryValues.append(activity)
+        }
+    }
+}
+
+extension ActivityVC : CLLocationManagerDelegate {
+    
+    func setupLocation(){
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            currentLocation = location
+        }
     }
 }
 
