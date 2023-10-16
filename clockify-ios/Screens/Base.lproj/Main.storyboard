@@ -916,7 +916,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="xOD-6l-t7k"/>
                                 </constraints>
-                                <color key="textColor" name="brandAccentDisbaled"/>
+                                <color key="textColor" name="brandBlue"/>
                                 <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

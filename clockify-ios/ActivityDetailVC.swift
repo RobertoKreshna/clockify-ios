@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class ActivityDetailVC: UIViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var activity: Activity?
     
@@ -82,11 +85,23 @@ class ActivityDetailVC: UIViewController {
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
+        request.predicate = NSPredicate(format: "title = %@", (activity?.title)!)
+        do {
+            let editedActivity = (try context.fetch(request))[0] as! Activity
+            editedActivity.title = titleTextView.text
+            saveData()
+        } catch let error {
+            print("Error \n \((error))")
+        }
     }
     
     @IBAction func deletePressed(_ sender: UIButton) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         context.delete(activity!)
+        saveData()
+    }
+    
+    func saveData(){
         do {
             try context.save()
             navigationController?.popViewController(animated: true)
@@ -94,5 +109,4 @@ class ActivityDetailVC: UIViewController {
             print("Error saving context \(error)")
         }
     }
-
 }
