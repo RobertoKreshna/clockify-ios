@@ -80,4 +80,19 @@ class ActivityDetailVC: UIViewController {
             cornerRadius: 16
         )
     }
+    
+    @IBAction func savePressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func deletePressed(_ sender: UIButton) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(activity!)
+        do {
+            try context.save()
+            navigationController?.popViewController(animated: true)
+        } catch {
+            print("Error saving context \(error)")
+        }
+    }
+
 }

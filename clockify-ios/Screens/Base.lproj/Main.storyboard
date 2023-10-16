@@ -778,11 +778,11 @@
             <objects>
                 <viewController id="aUv-Vw-CZH" customClass="ActivityDetailVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OJK-aI-4WZ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N3P-Mo-s5T">
-                                <rect key="frame" x="71.666666666666686" y="376" width="250" height="132"/>
+                                <rect key="frame" x="71.666666666666686" y="400" width="250" height="132"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="n2z-Bh-PSQ">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="132"/>
@@ -800,7 +800,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSI-b8-ZWr">
-                                                <rect key="frame" x="56.999999999999986" y="112.66666666666669" width="6" height="19.333333333333343"/>
+                                                <rect key="frame" x="56.999999999999986" y="112.66666666666663" width="6" height="19.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
                                                 <color key="textColor" name="brandAccent"/>
                                                 <nil key="highlightedColor"/>
@@ -826,7 +826,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj6-K2-AGv">
-                                                <rect key="frame" x="57.000000000000028" y="112.66666666666669" width="6" height="19.333333333333343"/>
+                                                <rect key="frame" x="57.000000000000028" y="112.66666666666663" width="6" height="19.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans7pt-Regular" family="Nunito Sans 7pt" pointSize="14"/>
                                                 <color key="textColor" name="brandAccent"/>
                                                 <nil key="highlightedColor"/>
@@ -839,7 +839,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="c18-wd-cHZ">
-                                <rect key="frame" x="73.000000000000014" y="221.33333333333334" width="247.33333333333337" height="54.666666666666657"/>
+                                <rect key="frame" x="73.000000000000014" y="245.33333333333334" width="247.33333333333337" height="54.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zui-IY-HDY">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="54.666666666666664"/>
@@ -874,7 +874,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="L9n-69-r3w">
-                                <rect key="frame" x="16" y="754" width="361" height="48"/>
+                                <rect key="frame" x="16" y="778" width="361" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gK5-d1-FfR">
                                         <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="48"/>
@@ -889,6 +889,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="savePressed:" destination="j1C-gj-05a" eventType="touchUpInside" id="L7K-4Z-K61"/>
+                                            <action selector="savePressed:" destination="aUv-Vw-CZH" eventType="touchUpInside" id="h3Y-38-3HC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWN-II-4zG">
@@ -904,12 +905,13 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="deletePressed:" destination="j1C-gj-05a" eventType="touchUpInside" id="XIW-bj-BGc"/>
+                                            <action selector="deletePressed:" destination="aUv-Vw-CZH" eventType="touchUpInside" id="nzM-ZW-oBz"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write your activity here ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nLW-wz-Q2R">
-                                <rect key="frame" x="16" y="630" width="361" height="96"/>
+                                <rect key="frame" x="16" y="654" width="361" height="96"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="xOD-6l-t7k"/>
@@ -919,7 +921,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="BYO-Oo-G30">
-                                <rect key="frame" x="126.33333333333333" y="538" width="140.33333333333337" height="48"/>
+                                <rect key="frame" x="126.33333333333333" y="562" width="140.33333333333337" height="48"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="9XK-V3-TmY">
                                         <rect key="frame" x="12.000000000000014" y="8" width="32" height="32"/>
@@ -935,7 +937,7 @@
                                 <edgeInsets key="layoutMargins" top="8" left="12" bottom="8" right="12"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ku-ES-F8f">
-                                <rect key="frame" x="176.33333333333334" y="143" width="40.333333333333343" height="22"/>
+                                <rect key="frame" x="176.33333333333334" y="40" width="40.333333333333343" height="22"/>
                                 <fontDescription key="fontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="16"/>
                                 <color key="textColor" name="brandYellow"/>
                                 <nil key="highlightedColor"/>
@@ -982,7 +984,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="y3F-P0-hvk"/>
+        <segue reference="Qpp-t9-cav"/>
         <segue reference="0uA-fG-d7J"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -42,6 +42,10 @@ class ActivityVC: UIViewController {
         setupLocation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
     func setupTableViewAndSearchBar(){
         tableView.dataSource = self
         tableView.delegate = self
