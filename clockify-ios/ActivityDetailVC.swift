@@ -86,7 +86,12 @@ class ActivityDetailVC: UIViewController {
     
     @IBAction func savePressed(_ sender: UIButton) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
-        request.predicate = NSPredicate(format: "title = %@", (activity?.title)!)
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
+                NSPredicate(format: "title = %@", (activity?.title)!),
+                NSPredicate(format: "start = %@", (activity?.start)! as CVarArg),
+                NSPredicate(format: "end = %@", (activity?.end)! as CVarArg)
+            ]
+        )
         do {
             let editedActivity = (try context.fetch(request))[0] as! Activity
             editedActivity.title = titleTextView.text
