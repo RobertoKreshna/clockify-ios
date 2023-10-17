@@ -8,5 +8,6 @@ target 'clockify-ios' do
   # Pods for clockify-ios
   pod 'IQKeyboardManagerSwift'
   pod 'DropDown'
+  pod 'SwipeCellKit'
 
 end

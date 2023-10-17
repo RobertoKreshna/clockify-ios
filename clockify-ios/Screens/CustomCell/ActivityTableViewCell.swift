@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class ActivityTableViewCell: UITableViewCell {
+class ActivityTableViewCell: SwipeTableViewCell {
     
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!

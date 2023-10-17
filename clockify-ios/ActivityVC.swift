@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 import DropDown
 import CoreLocation
+import SwipeCellKit
 
 class ActivityVC: UIViewController {
     var currentUser: User?
@@ -113,6 +114,8 @@ extension ActivityVC: UITableViewDataSource {
         cell.layoutMargins = .zero
         cell.separatorInset.left = 16
         cell.separatorInset.right = 16
+        
+        cell.delegate = self
         return cell
     }
     
@@ -288,6 +291,26 @@ extension ActivityVC : CLLocationManagerDelegate {
         if let location = locations.last {
             currentLocation = location
         }
+    }
+}
+
+//MARK: Cell Swipeable
+
+extension ActivityVC: SwipeTableViewCellDelegate {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeCellKit.SwipeActionsOrientation) -> [SwipeCellKit.SwipeAction]? {
+        guard orientation == .right else { return nil }
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            let activity = self.activityGroupedDictionaryValues[indexPath.section][indexPath.row]
+            self.context.delete(activity)
+            do{
+                try self.context.save()
+                self.loadData()
+            } catch {
+                print("Error saving context \(error)")
+            }
+        }
+        deleteAction.backgroundColor = .brandRed
+        return [deleteAction]
     }
 }
 
