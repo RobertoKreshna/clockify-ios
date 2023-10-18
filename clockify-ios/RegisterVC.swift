@@ -99,16 +99,23 @@ class RegisterVC: UIViewController {
                 confirmPassword: confirmPw
             )
             if(currentUser != nil){
-                self.performSegue(withIdentifier: "registerToMain", sender: self)
+                self.performSegue(withIdentifier: "registerToPopup", sender: self)
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "registerToMain"){
-            let destinationVC = segue.destination as! MainVC
-            destinationVC.currentUser = currentUser
+        if segue.identifier == "registerToPopup" {
+            let destinationVC = segue.destination as! RegisterPopupVC
+            destinationVC.outsideButtonTapped = afterPopupDisplayed
         }
+    }
+    
+    @objc func afterPopupDisplayed(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MainVC") as! MainVC
+        viewController.currentUser = currentUser
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
