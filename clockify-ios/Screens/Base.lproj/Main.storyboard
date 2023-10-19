@@ -429,45 +429,8 @@
                                     <constraint firstAttribute="width" constant="156" id="X2c-f2-B5n"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-Lq-kR9">
-                                <rect key="frame" x="96.333333333333329" y="111" width="200.66666666666669" height="33.333333333333343"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRG-CZ-9y5">
-                                        <rect key="frame" x="0.0" y="0.0" width="92.333333333333329" height="33.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="TIMER">
-                                            <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="14"/>
-                                            <color key="baseForegroundColor" name="brandYellow"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="updateView:" destination="hZJ-dc-sSd" eventType="touchUpInside" id="eiO-GH-UFq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8K-xR-2w3">
-                                        <rect key="frame" x="108.33333333333334" y="0.0" width="92.333333333333343" height="33.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="ACTIVITY">
-                                            <fontDescription key="titleFontDescription" name="NunitoSans7pt-Bold" family="Nunito Sans 7pt" pointSize="14"/>
-                                            <color key="baseForegroundColor" name="brandAccentDisbaled"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="updateView:" destination="hZJ-dc-sSd" eventType="touchUpInside" id="O8D-Ox-Ses"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tt2-sK-TYd">
-                                <rect key="frame" x="0.0" y="152" width="393" height="700"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QNg-hg-9mX">
-                                <rect key="frame" x="131" y="144" width="24" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="brandYellow"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MHP-we-uP5">
-                                <rect key="frame" x="239" y="144" width="24" height="2"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tt2-sK-TYd" customClass="LZViewPager" customModule="LZViewPager">
+                                <rect key="frame" x="0.0" y="108" width="393" height="744"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -476,18 +439,12 @@
                         <color key="backgroundColor" name="brandBlue"/>
                         <constraints>
                             <constraint firstItem="pBO-sh-fXx" firstAttribute="top" secondItem="m29-gb-ioo" secondAttribute="top" constant="60" id="D16-d8-ayn"/>
-                            <constraint firstItem="uWa-Lq-kR9" firstAttribute="centerX" secondItem="m29-gb-ioo" secondAttribute="centerX" id="EHU-tW-eYp"/>
-                            <constraint firstItem="uWa-Lq-kR9" firstAttribute="top" secondItem="avQ-ef-G2B" secondAttribute="top" constant="8" id="Hn5-TU-lUt"/>
                             <constraint firstItem="pBO-sh-fXx" firstAttribute="centerX" secondItem="m29-gb-ioo" secondAttribute="centerX" id="Vg4-Fe-HSo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="60M-eB-5e8"/>
                     <connections>
-                        <outlet property="activityLine" destination="MHP-we-uP5" id="7vR-MM-f0F"/>
-                        <outlet property="activityTab" destination="R8K-xR-2w3" id="ZBe-eS-tCq"/>
-                        <outlet property="contentView" destination="tt2-sK-TYd" id="dY5-V7-QDb"/>
-                        <outlet property="timerLine" destination="QNg-hg-9mX" id="c08-rQ-wJ7"/>
-                        <outlet property="timerTab" destination="aRG-CZ-9y5" id="nnF-Ca-glZ"/>
+                        <outlet property="contentView" destination="tt2-sK-TYd" id="wR5-PI-CYV"/>
                         <segue destination="aUv-Vw-CZH" kind="show" identifier="notUsed" id="y3F-P0-hvk"/>
                     </connections>
                 </viewController>
@@ -500,11 +457,11 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityVC" title="ActivityVC" id="eKx-Dl-Grs" customClass="ActivityVC" customModule="clockify_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8pK-Ir-LSq">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="744"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-De-6vD">
-                                <rect key="frame" x="0.0" y="72" width="393" height="628"/>
+                                <rect key="frame" x="0.0" y="72" width="393" height="672"/>
                                 <color key="backgroundColor" name="brandBlue"/>
                                 <color key="separatorColor" name="brandAccentDisbaled"/>
                                 <prototypes>
@@ -557,7 +514,7 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="393" height="700"/>
+                    <size key="freeformSize" width="393" height="744"/>
                     <connections>
                         <outlet property="searchBar" destination="lrw-DS-NPK" id="QQI-j3-DLd"/>
                         <outlet property="sortButton" destination="633-bR-pPb" id="nJM-d8-dI4"/>

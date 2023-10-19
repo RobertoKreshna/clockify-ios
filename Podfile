@@ -9,5 +9,6 @@ target 'clockify-ios' do
   pod 'IQKeyboardManagerSwift'
   pod 'DropDown'
   pod 'SwipeCellKit'
+  pod 'LZViewPager'
 
 end
